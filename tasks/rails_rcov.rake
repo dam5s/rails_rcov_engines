@@ -175,7 +175,7 @@ else
     ARGV.clear; ARGV << test_name
 
     RcovTestSettings.untested_plugins = RcovTestSettings.plugins_list - [plugin]
-    RcovTestSettings.output_dir = ( testing_plugin ? "./coverage/#{ENV['PLUGIN']}" : File.expand_path("./coverage/#{test_name.gsub('test:','')}") )
+    RcovTestSettings.output_dir = ( testing_plugin ? "./coverage/#{plugin}" : File.expand_path("./coverage/#{test_name.gsub('test:','')}") )
     Rake.application.run
   else
     raise "No test to execute!"
